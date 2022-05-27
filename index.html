@@ -6,45 +6,34 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Learn CSS Transform</title>
 		<style>
-			.container {
-				display: flex;
+			@keyframes sample {
+				0% {
+					transform: translate(0, 0);
+				}
+
+				20% {
+					transform: translate(500px, 0);
+				}
+
+				100% {
+					transform: translate(700px, 500px);
+				}
 			}
 
 			.box {
 				width: 100px;
 				height: 100px;
-				background-color: bisque;
-				border: 2px solid black;
-				transition: 1s;
-			}
-
-			.box:hover {
-				width: 200px;
-				/* transform: scale(2) rotate(45deg) skew(30deg); */
-				/* transform: translate(30px, 10px); */
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border: 2px solid #333;
+				background-color: azure;
+				animation: sample 2s;
 			}
 		</style>
 	</head>
 	<body>
-		<h1>CSS Transform</h1>
-		<p>
-			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium impedit maiores voluptatum! Distinctio
-			doloribus id molestiae maxime nesciunt dolor officia possimus consequuntur ex a obcaecati eaque, dolore quo
-			ratione. Ex suscipit mollitia eos? Dolor quam obcaecati porro architecto earum, repudiandae ratione
-			laudantium similique, cumque amet autem non laborum dolorem quidem.
-		</p>
-		<div class="container">
-			<div class="box">A</div>
-			<div class="box">B</div>
-			<div class="box">C</div>
-			<div class="box">D</div>
-			<div class="box">E</div>
-		</div>
-		<p>
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit expedita laborum autem accusantium nemo
-			dolores labore fuga reiciendis temporibus eius natus culpa laboriosam aliquid enim veniam ipsa nostrum, illo
-			vero dolor odit repellat deleniti tempora maiores accusamus. Reprehenderit fugiat iusto odio perspiciatis a
-			adipisci? Dignissimos tempore fugiat blanditiis vel sapiente.
-		</p>
+		<h1>CSS Animation</h1>
+		<div class="box"></div>
 	</body>
 </html>
