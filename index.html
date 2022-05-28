@@ -6,23 +6,63 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Learn CSS Transform</title>
 		<style>
-			@keyframes spaceship-animation {
-				100% {
-					background-position: -2550px 0;
-				}
+			.container {
+				width: 60vw;
+				height: 60vh;
+				border: 1px solid black;
+				background-color: darkslateblue;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 40px;
+				perspective: 500px;
 			}
 
-			.spaceship {
-				width: 150px;
-				height: 150px;
-				background: url("img/sprite_spaceship.png") no-repeat 0 0 / auto 150px;
+			.card {
+				position: relative;
+				width: 200px;
+				height: 200px;
+				transform: rotateY(0deg);
+				transition: transform 1s;
+				transform-style: preserve-3d;
+				transform-origin: left;
+			}
 
-				animation: spaceship-animation 1s infinite steps(17);
+			.card-side {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 15px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				backface-visibility: hidden;
+			}
+
+			.card-side__front {
+				z-index: 1;
+				background-color: antiquewhite;
+			}
+
+			.card-side__back {
+				background-color: cadetblue;
+				transform: rotateY(180deg);
+			}
+
+			.container:hover .card {
+				transform: rotateY(-120deg);
 			}
 		</style>
 	</head>
 	<body>
-		<h1>CSS Animation</h1>
-		<div class="spaceship"></div>
+		<h1>CSS 3D</h1>
+		<div class="container">
+			<div class="card">
+				<div class="card-side card-side__front">Apple</div>
+				<div class="card-side card-side__back">Banana</div>
+			</div>
+		</div>
 	</body>
 </html>
