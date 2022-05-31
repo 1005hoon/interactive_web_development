@@ -4,62 +4,27 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Learn Flexbox</title>
-		<style>
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
-			.container {
-				height: 80vh;
-				background-color: thistle;
-				display: flex;
-			}
-
-			.box {
-				padding: 2rem;
-				border: 2px solid black;
-				flex: 1;
-			}
-
-			.box:nth-child(1) {
-				flex-grow: 1;
-			}
-			.box:nth-child(2) {
-				flex-grow: 2;
-			}
-			.box:nth-child(3) {
-				flex-grow: 3;
-			}
-			.box:nth-child(4) {
-				flex-grow: 4;
-			}
-			.box:nth-child(5) {
-				flex-grow: 5;
-			}
-			.box:nth-child(6) {
-				flex-grow: 6;
-			}
-			.box:nth-child(7) {
-				flex-grow: 7;
-			}
-			.box:nth-child(8) {
-				flex-grow: 8;
-			}
-		</style>
+		<title>Interactive Web with JavaScript</title>
+		<link rel="stylesheet" href="./css/reset.css" />
+		<link rel="stylesheet" href="./css/style.css" />
 	</head>
 	<body>
-		<h1>CSS 3D</h1>
-		<div class="container">
-			<div class="box">A</div>
-			<div class="box">B</div>
-			<div class="box">C</div>
-			<div class="box">D</div>
-			<div class="box">E</div>
-			<div class="box">F</div>
-			<div class="box">G</div>
-			<div class="box">H</div>
+		<div class="stage">
+			<div class="ilbuni first"></div>
+			<div class="ilbuni second"></div>
+			<div class="ilbuni third"></div>
 		</div>
+
+		<script>
+			const stage = document.querySelector(".stage");
+
+			function clickHandler(e) {
+				if (e.target.classList.contains("ilbuni")) {
+					stage.removeChild(e.target);
+				}
+			}
+
+			stage.addEventListener("click", clickHandler);
+		</script>
 	</body>
 </html>
